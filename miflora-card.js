@@ -12,18 +12,18 @@ class MifloraCard extends HTMLElement {
             intensity: 'hass:white-balance-sunny',
             conductivity: 'hass:emoticon-poop',
             battery: 'hass:battery',
-            fugtighed: 'hass:water',
-            temperatur: 'hass:thermometer',
-            lys: 'hass:white-balance-sunny',
-            ledeevne: 'hass:emoticon-poop',
-            batteri: 'hass:battery',
+            Fugtighed: 'hass:water',
+            Temperatur: 'hass:thermometer',
+            Lys: 'hass:white-balance-sunny',
+            Ledeevne: 'hass:emoticon-poop',
+            Batteri: 'hass:battery'
         };
 
     }
 
     _computeIcon(sensor, state) {
         const icon = this.sensors[sensor];
-        if (sensor === 'battery') {
+        if (sensor === 'battery' || sensor === 'Batteri') {
             if (state <= 5) {
                 return `${icon}-alert`;
             } else if (state < 95) {
@@ -84,7 +84,7 @@ class MifloraCard extends HTMLElement {
             var _icon = this._computeIcon(_name, _state);
             var _alertStyle = '';
             var _alertIcon = '';
-            if (_name == 'moisture') {
+            if (_name == 'moisture' || _name == 'Fugtighed') {
                 if (_state > _maxMoisture) {
                     _alertStyle = ';color:red';
                     _alertIcon = '&#9650; ';
@@ -93,13 +93,13 @@ class MifloraCard extends HTMLElement {
                     _alertIcon = '&#9660; '
                 }
             }
-            if (_name == 'conductivity') {
+            if (_name == 'conductivity' || _name == 'Ledeevne') {
                 if (_state < _minConductivity) {
                     _alertStyle = ';color:red';
                     _alertIcon = '&#9660; ';
                 }
             }
-            if (_name == 'temperature') {
+            if (_name == 'temperature' || _name == 'Temperatur') {
                 if (_state < _minTemperature) {
                     _alertStyle = ';color:red';
                     _alertIcon = '&#9660; ';
@@ -147,6 +147,7 @@ class MifloraCard extends HTMLElement {
             .image {
                 float: right;
                 position: relative;
+                top: 8px;
                 right: 24px;
                 width: 115px;
                 height: 115px;
