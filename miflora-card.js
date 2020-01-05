@@ -11,7 +11,12 @@ class MifloraCard extends HTMLElement {
             temperature: 'hass:thermometer',
             intensity: 'hass:white-balance-sunny',
             conductivity: 'hass:emoticon-poop',
-            battery: 'hass:battery'
+            battery: 'hass:battery',
+            fugtighed: 'hass:water',
+            temperatur: 'hass:thermometer',
+            lys: 'hass:white-balance-sunny',
+            ledeevne: 'hass:emoticon-poop',
+            batteri: 'hass:battery',
         };
 
     }
@@ -141,9 +146,8 @@ class MifloraCard extends HTMLElement {
             }
             .image {
                 float: right;
-                padding-right: 24px;
-                margin: 8px;
-                margin-right: 0px;
+                position: relative;
+                right: 24px;
                 width: 115px;
                 height: 115px;
                 border-radius: 6px;
@@ -152,6 +156,8 @@ class MifloraCard extends HTMLElement {
               display: flex;
               cursor: pointer;
               padding-right: 40px;
+              margin-top: 4px;
+              margin-bottom: 4px;
             }
             #sensors {
                 padding: 8px 24px 24px 24px
@@ -160,6 +166,7 @@ class MifloraCard extends HTMLElement {
                 color: var(--paper-item-icon-color);
             }
             .name {
+                padding-left: 4px;
                 margin-top: 3px;
                 white-space: nowrap;
                 overflow: hidden;
