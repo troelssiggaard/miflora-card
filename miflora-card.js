@@ -148,8 +148,8 @@ class MifloraCard extends HTMLElement {
                 float: right;
                 position: relative;
                 top: 8px;
-                margin-top: 2px;
-                margin-bottom: 2px;
+                margin-top: 4px;
+                margin-bottom: 8px;
                 right: 24px;
                 width: 115px;
                 height: 115px;
