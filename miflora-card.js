@@ -141,7 +141,6 @@ class MifloraCard extends HTMLElement {
             }
             .image {
                 float: right;
-                padding-left: 16px
                 margin-left: 8px;
                 margin-right: 8px;
                 margin-bottom: 8px;
@@ -152,9 +151,10 @@ class MifloraCard extends HTMLElement {
             .sensor {
               display: flex;
               cursor: pointer;
+              padding-right: 16px;
             }
             #sensors {
-                padding: 0px 32px 16px 32px
+                padding: 8px 24px 24px 24px
             }
             .icon {
                 color: var(--paper-item-icon-color);
