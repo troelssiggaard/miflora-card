@@ -1,4 +1,4 @@
-/* miflora-card - version: v0.1.0 */
+/* miflora-card - version: v0.1.1 */
 class MifloraCard extends HTMLElement {
     constructor() {
         super();
@@ -52,7 +52,7 @@ class MifloraCard extends HTMLElement {
         var _maxMoisture = config.max_moisture;
         var _minMoisture = config.min_moisture;
         var _minConductivity = config.min_conductivity;
-        var _minTemperature = config.min_termperature;
+        var _minTemperature = config.min_temperature;
         var _sensors = [];
         for (var i = 0; i < config.entities.length; i++) {
             _sensors.push(config.entities[i].split(":")); // Split name away from sensor id
@@ -94,7 +94,7 @@ class MifloraCard extends HTMLElement {
                     _alertIcon = '&#9660; ';
                 }
             }
-            if (_name == 'termperature') {
+            if (_name == 'temperature') {
                 if (_state < _minTemperature) {
                     _alertStyle = ';color:red';
                     _alertIcon = '&#9660; ';
@@ -132,15 +132,16 @@ class MifloraCard extends HTMLElement {
 
         style.textContent = `
             ha-card {
-            position: relative;
-            padding: 0;
-            background-size: 100%;
+              position: relative;
+              padding: 0;
+              background-size: 100%;
             }
             ha-card .header {
-            width: 100%;
+              width: 100%;
             }
             .image {
                 float: right;
+                padding-left: 16px
                 margin-left: 8px;
                 margin-right: 8px;
                 margin-bottom: 8px;
@@ -149,8 +150,11 @@ class MifloraCard extends HTMLElement {
                 border-radius: 6px;
             }
             .sensor {
-            display: flex;
-            cursor: pointer;
+              display: flex;
+              cursor: pointer;
+            }
+            #sensors {
+                padding: 0px 32px 16px 32px
             }
             .icon {
                 color: var(--paper-item-icon-color);
